@@ -18,7 +18,7 @@ const pool = new Pool({
     port: 5432,
 })
 
-// GET ALL
+
 app.get('/', (req, res) => {
     console.log("TEST DATA :");
 
@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
         });
 });
 
-// POST (Tambah Data)
+
 app.post('/biodata', (req, res) => {
     const { id, nama, nim, kelas } = req.body;
 
@@ -44,7 +44,7 @@ app.post('/biodata', (req, res) => {
         .catch(err => console.error(err));
 });
 
-// PUT (Update Data)
+
 app.put('/biodata/:id', (req, res) => {
     const { id } = req.params;
     const { nama, nim, kelas } = req.body;
